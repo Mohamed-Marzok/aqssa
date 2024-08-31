@@ -1,0 +1,195 @@
+/* Import a nice font from Google Fonts (uncomment and replace the URL) */
+/* @import url('https://fonts.googleapis.com/css2?family=YourFont:wght@400;700&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: /* imported font name here, */ Tahoma, sans-serif; 
+}
+
+body {
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: burlywood; /* Background color for the entire page */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige; /* Background color for the main container */
+    border-radius: 10px; /* Rounded corners for the container */
+    padding: 30px 20px; /* Padding inside the container */
+    width: 90%; /* Flexible width of the container */
+    max-width: 440px; /* Maximum width of the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect for the container */
+}
+
+.wrapper img {
+    max-width: 80px; /* Maximum width for the image */
+    width: 20vw; /* Relative width to viewport */
+}
+
+.wrapper h1 {
+    font-size: 9vw; /* Font size relative to viewport width */
+    font-weight: 600; /* Font weight for the heading */
+    margin: 20px 0; /* Margin above and below the heading */
+    text-align: center; 
+}
+
+.wrapper .content {
+    width: 100%; /* Full width of the content section */
+    display: flex;
+    justify-content: space-between; /* Space out columns evenly */
+    margin-bottom: 20px; /* Margin below the content section */
+}
+
+.content .column {
+    border: 3px solid brown; 
+    border-radius: 5px; 
+    padding: 0 15px; /* Padding inside each column */
+    flex: 1; /* for flexible columns*/
+    margin: 0 5px; /* Margin between columns */
+}
+
+.column select {
+    border: none; /* Remove default border */
+    height: 53px; /* Height of the select dropdown */
+    width: 100%; /* Full width of the select dropdown */
+    font-size: 3vw; /* Font size relative to viewport width */
+    background:beige;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px; /* Margin above the controls section */
+}
+
+/* Styles for buttons inside the wrapper */
+.wrapper button {
+    width: 100%; /* Full width of the button */
+    outline: none; /* Remove default button outline */
+    border: 5px solid brown; /* Border around buttons */
+    font-size: 20px; /* Font size of button text */
+    padding: 17px 72px; /* Padding inside buttons */
+    margin-top: 20px; /* Margin above buttons */
+    margin-bottom: 20px; /* Margin below buttons */
+    border-radius: 10px; /* Rounded corners for buttons */
+    background-color: blanchedalmond; /* Background color of buttons */
+    color: brown; /* Text color of buttons */
+    font-weight: 600; /* Font weight of button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.wrapper button:hover {
+    background-color:  rgb(237, 201, 170);/* Change background color on hover */
+}
+
+/* Styles for the custom alert */
+#custom-alert {
+    position: fixed; /* Fixed position to cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Ensure it appears above other content */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+#custom-alert.show {
+    opacity: 1; /* Show the alert when .show class is added */
+}
+
+.alert-content {
+    background: beige; /* Background color of the alert box */
+    padding: 20px; /* Padding inside the alert box */
+    border-radius: 8px; /* Rounded corners for the alert box */
+    text-align: center; /* Center the text inside the alert box */
+    transform: scale(0.7); /* Scale down the alert box initially */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.alert-content p {
+    margin-bottom: 20px; /* Margin below the paragraph */
+    font-size: 8dvh; /* Font size of the paragraph text */
+}
+
+#alert-ok-button {
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size of the button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    background-color: brown; /* Background color of the button */
+    color: white; /* Text color of the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button */
+}
+
+#alert-ok-button:hover {
+    background: rgba(183, 71, 71, 0.677); /* Change background color on hover*/
+}
+
+/* Keyframes for alert animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with zero opacity */
+    }
+    to {
+        opacity: 1; /* End with full opacity */
+    }
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+    .wrapper {
+        padding: 40px 30px; /* Increased padding for larger screens */
+    }
+    
+    .wrapper img {
+        max-width: 103px; /* Larger image size */
+        width: auto; /* Maintain aspect ratio */
+    }
+
+    .wrapper h1 {
+        font-size: 38px; /* Larger font size for headings */
+    }
+
+    .column select {
+        font-size: 18px; /* Larger font size for select dropdowns */
+    }
+
+    .wrapper button {
+        font-size: 22px; /* Larger font size for buttons */
+        padding: 20px 0; /* Adjust padding for buttons */
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        padding: 50px 40px; /* Further increased padding for larger screens */
+    }
+
+    .wrapper h1 {
+        font-size: 42px; /* Larger font size for headings */
+    }
+
+    .column select {
+        font-size: 20px; /* Larger font size for select dropdowns */
+    }
+
+    .wrapper button {
+        font-size: 24px; /* Larger font size for buttons */
+        padding: 25px 0; /* Adjust padding for buttons */
+    }
+}
